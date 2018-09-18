@@ -5,6 +5,9 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.LockSupport;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * 锁的练习RenntrantLock、Condition、LockSupport
+ */
 public class LockPric {
     static ReentrantLock lock=new ReentrantLock();
 

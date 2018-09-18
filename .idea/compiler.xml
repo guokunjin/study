@@ -7,11 +7,15 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="concurrent" />
+        <module name="jersey_restletDemo" />
+        <module name="test_tool" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="concurrent" target="1.5" />
+      <module name="jersey_restletDemo" target="1.5" />
       <module name="study" target="1.5" />
+      <module name="test_tool" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

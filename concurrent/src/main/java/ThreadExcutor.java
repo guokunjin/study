@@ -1,5 +1,8 @@
 import java.util.concurrent.*;
 
+/**
+ * 线程池的练习
+ */
 public class ThreadExcutor {
     public static void main(String[] args) {
         /**
