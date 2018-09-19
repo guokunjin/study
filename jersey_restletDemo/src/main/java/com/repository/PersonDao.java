@@ -10,9 +10,9 @@ public class PersonDao {
     private static List<Person> personList;
     static {
         personList=new LinkedList<Person>();
-        personList.add(new Person(1,"Joker",20));
-        personList.add(new Person(2,"Jack",19));
-        personList.add(new Person(3,"Tom",20));
+        personList.add(new Person(1,"Joker",20,"http://127.0.0.1/person/headImg/moren"));
+        personList.add(new Person(2,"Jack",19,"http://127.0.0.1/person/headImg/moren"));
+        personList.add(new Person(3,"Tom",20,"http://127.0.0.1/person/headImg/moren"));
     }
 
     public List<Person> getAll(){
@@ -50,15 +50,23 @@ public class PersonDao {
 
     public void edit(Person person){
         synchronized(personList){
-            Iterator<Person> iterator = personList.iterator();
-            while(iterator.hasNext()){
-                Person p=iterator.next();
+           for(Person p:personList){
                 if(p.getId().equals(person.getId())){
-                    iterator.remove();
-                    personList.add(person);
+                    p.setAge(person.getAge());
+                    p.setName(person.getName());
+                    return ;
                 }
             }
         }
     }
 
+    public Person changeHeadImg(int id, String s) {
+        for(Person p:personList){
+            if(p.getId().equals(id)){
+                p.setHeadImg(s);
+                return p;
+            }
+        }
+        return null;
+    }
 }

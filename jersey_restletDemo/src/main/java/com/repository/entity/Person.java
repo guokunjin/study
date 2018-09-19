@@ -2,7 +2,7 @@ package com.repository.entity;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement
+//@XmlRootElement
 public class Person{
     private Integer id;
 
@@ -10,13 +10,24 @@ public class Person{
 
     private Integer age;
 
+    private String headImg;
+
     public Person() {
     }
 
-    public Person(Integer id, String name, Integer age) {
+    public Person(Integer id, String name, Integer age, String headImg) {
         this.id = id;
         this.name = name;
         this.age = age;
+        this.headImg = headImg;
+    }
+
+    public String getHeadImg() {
+        return headImg;
+    }
+
+    public void setHeadImg(String headImg) {
+        this.headImg = headImg;
     }
 
     public Integer getId() {
