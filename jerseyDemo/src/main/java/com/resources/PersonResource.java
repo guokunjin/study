@@ -6,6 +6,7 @@ import com.repository.entity.Person;
 import org.apache.commons.io.FileUtils;
 import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
 import org.glassfish.jersey.media.multipart.FormDataParam;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.inject.Singleton;
 import javax.ws.rs.*;
@@ -22,7 +23,8 @@ public class PersonResource {
         System.out.println("实例一个PersonResource");
     }
 
-    PersonDao personDao=new PersonDao();
+    @Autowired
+    PersonDao personDao;
 
 
     @Consumes({MediaType.MULTIPART_FORM_DATA})  //指定接受类型

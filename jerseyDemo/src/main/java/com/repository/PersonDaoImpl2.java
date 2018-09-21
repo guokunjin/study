@@ -1,12 +1,19 @@
 package com.repository;
 
 import com.repository.entity.Person;
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Repository;
 
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-public class PersonDao {
+@Profile("env2")
+@Repository("pd2")public class PersonDaoImpl2 implements PersonDao{
+    public PersonDaoImpl2() {
+        System.out.println("实例化PersonDaoImpl2");
+    }
+
     private static List<Person> personList;
     static {
         personList=new LinkedList<Person>();
