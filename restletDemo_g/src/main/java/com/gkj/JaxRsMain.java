@@ -7,8 +7,7 @@ import org.restlet.ext.jaxrs.JaxRsApplication;
 
 public class JaxRsMain extends JaxRsApplication {
 
-    public JaxRsMain(Context context) {
-        super(context);
+    public JaxRsMain() {
         this.add(new App());
     }
 
@@ -16,7 +15,7 @@ public class JaxRsMain extends JaxRsApplication {
         try{
             Component component = new Component();
             component.getServers().add(Protocol.HTTP, 80);
-            component.getDefaultHost().attach(new JaxRsMain(null));
+            component.getDefaultHost().attach(new JaxRsMain());
             component.start();
         }catch(Exception e){
             e.printStackTrace();

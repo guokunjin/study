@@ -3,21 +3,13 @@ package com.gkj.resources;
 import com.gkj.repository.PersonDao;
 import com.gkj.repository.PersonDaoImpl;
 import com.gkj.repository.entity.Person;
-import org.restlet.resource.Delete;
-import org.restlet.resource.Get;
-import org.restlet.resource.Post;
-import org.restlet.resource.ServerResource;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.List;
 
 @Path("person")
-//@Produces(MediaType.APPLICATION_JSON)
+@Produces(MediaType.APPLICATION_JSON)
 public class PersonResource {
     public PersonResource() {
         System.out.println("实例一个PersonResource");

@@ -2,8 +2,6 @@ package com.gkj;
 
 import com.gkj.resources.PersonResource;
 import com.gkj.resources.TestResource;
-import org.restlet.Restlet;
-import org.restlet.routing.Router;
 
 import javax.ws.rs.core.Application;
 import java.util.HashSet;

@@ -11,7 +11,9 @@
     <modules>
         <module>concurrent</module>
         <module>test_tool</module>
-        <module>jersey_restletDemo</module>
+        <module>jerseyDemo</module>
+        <module>restlet</module>
+        <module>restletDemo_g</module>
     </modules>
 
 
