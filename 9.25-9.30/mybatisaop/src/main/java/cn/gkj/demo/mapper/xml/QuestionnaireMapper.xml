@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.gkj.demo.mapper.QuestionnaireMapper" >
+  <resultMap id="BaseResultMap" type="cn.gkj.demo.entry.Questionnaire" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="questionnaire_content" property="questionnaireContent" jdbcType="VARCHAR" />
+    <result column="questionnaire_name" property="questionnaireName" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="u_id" property="uId" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, questionnaire_content, questionnaire_name, status, u_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from questionnaire
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from questionnaire
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.gkj.demo.entry.Questionnaire" >
+    insert into questionnaire (id, questionnaire_content, questionnaire_name, 
+      status, u_id)
+    values (#{id,jdbcType=INTEGER}, #{questionnaireContent,jdbcType=VARCHAR}, #{questionnaireName,jdbcType=VARCHAR}, 
+      #{status,jdbcType=INTEGER}, #{uId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.gkj.demo.entry.Questionnaire" >
+    insert into questionnaire
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="questionnaireContent != null" >
+        questionnaire_content,
+      </if>
+      <if test="questionnaireName != null" >
+        questionnaire_name,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="uId != null" >
+        u_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="questionnaireContent != null" >
+        #{questionnaireContent,jdbcType=VARCHAR},
+      </if>
+      <if test="questionnaireName != null" >
+        #{questionnaireName,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="uId != null" >
+        #{uId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.gkj.demo.entry.Questionnaire" >
+    update questionnaire
+    <set >
+      <if test="questionnaireContent != null" >
+        questionnaire_content = #{questionnaireContent,jdbcType=VARCHAR},
+      </if>
+      <if test="questionnaireName != null" >
+        questionnaire_name = #{questionnaireName,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="uId != null" >
+        u_id = #{uId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.gkj.demo.entry.Questionnaire" >
+    update questionnaire
+    set questionnaire_content = #{questionnaireContent,jdbcType=VARCHAR},
+      questionnaire_name = #{questionnaireName,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      u_id = #{uId,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

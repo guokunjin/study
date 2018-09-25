@@ -1,0 +1,11 @@
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    password: 123456
+    username: root
+    url: jdbc:mysql://localhost:3306/archer?useUnicode=true&characterEncoding=utf-8&useSSL=false
+server:
+  port: 80
+mybatis:
+  mapper-locations: classpath:cn/gkj/demo/mapper/xml/*.xml
