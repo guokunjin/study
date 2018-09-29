@@ -1,8 +1,8 @@
 package com.repository;
 
 import com.repository.entity.Person;
-import org.springframework.context.annotation.Profile;
-import org.springframework.stereotype.Repository;
+//import org.springframework.context.annotation.Profile;
+//import org.springframework.stereotype.Repository;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -12,9 +12,9 @@ import java.util.List;
  * -Dspring.profiles.active="env1"
  * 运行时指定使用的环境
  */
-@Profile("env1")
-@Repository("pd")
-public class PersonDaoImpl implements com.repository.PersonDao {
+//@Profile("env1")
+//@Repository("pd")
+public class PersonDaoImpl implements PersonDao{
     public PersonDaoImpl() {
         System.out.println("实例化PersonDaoImpl");
     }

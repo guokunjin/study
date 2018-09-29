@@ -1,7 +1,8 @@
+package com;
+
 import org.codehaus.jackson.jaxrs.JacksonJsonProvider;
 import org.glassfish.jersey.media.multipart.MultiPartFeature;
 import org.glassfish.jersey.server.ResourceConfig;
-import org.springframework.core.env.ConfigurableEnvironment;
 
 public class RestApplication extends ResourceConfig {
 
